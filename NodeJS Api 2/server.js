@@ -19,7 +19,7 @@ const server = http.createServer((req, res) => {
   else if(req.url.match(/\/api\/Books\/\w+/) && req.method === 'DELETE') {
     const id = req.url.split('/')[3] 
     deleteBook(req, res, id)
-}
+  }
   else {
     res.writeHead(404, { "Content-Type": "application/json" });
     res.end(JSON.stringify({ message: 'Route Not Found' }));
